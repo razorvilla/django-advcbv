@@ -1,0 +1,24 @@
+{% extends "basic_app/basic_app_base.html" %}
+
+{% block body_block %}
+
+
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">Welcome to the School Detail Page!</div>
+      <div class="card-body">
+      <h5 class="card-title">School Details:</h5>
+      <p class="card-text"><strong>Name:{{ school_detail.name }}</strong></p>
+      <p class="card-text"><strong>Principal:</strong>{{ school_detail.principal }}</p>
+      <p class="card-text"><strong>Location</strong>{{ school_detail.location }}</p>
+      <h3>Students:</h3>
+      {% for student in school_detail.students.all %}
+        <p class="card-text">{{student.name}} who is {{student.age}} years old</p>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
